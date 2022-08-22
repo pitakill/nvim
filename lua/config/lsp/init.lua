@@ -5,4 +5,5 @@ if not ok then
 end
 
 require 'config.lsp.handlers'.setup()
-require'config.lsp.setup'
+require 'config.lsp.setup'
+require 'config.lsp.null-ls'

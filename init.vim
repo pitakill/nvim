@@ -7,7 +7,7 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 set foldmethod=indent
-set foldlevel=3
+set foldlevel=7
 set autoread
 set textwidth=80
 set listchars=eol:↲,trail:·,nbsp:␣,tab:→\ 
@@ -15,7 +15,8 @@ set list
 set undofile
 set signcolumn=yes
 set completeopt=menu,menuone,noselect
-set colorcolumn=80
+set splitbelow
+set splitright
 let mapleader=' '
 
 " Plugin setup vim-plugin
@@ -37,6 +38,7 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'jonathanfilip/lucius'
 Plug 'altercation/vim-colors-solarized'
+Plug 'sainnhe/everforest'
 " Telescope configuration
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -51,10 +53,21 @@ Plug 'will/bgwinch.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'lcheylus/overlength.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'rmagatti/goto-preview'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'samodostal/image.nvim'
+Plug 'kwkarlwang/bufjump.nvim'
+Plug 'folke/lua-dev.nvim'
 call plug#end()
 
 " Quick change background light/dark
-noremap <leader>bg <cmd>let &background = ( &background == 'dark' ? 'light' : 'dark' )<cr>
+noremap <leader>bg <cmd>let &background = ( &background == 'dark' ? 'light' : 'dark' )<cr><cmd>lua require'overlength'.setup{bg='#e9e8e2'}<cr>
 " Copy to system clipboard
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
@@ -65,11 +78,14 @@ vnoremap <leader>y "+y
 nnoremap <leader>Y "+y$
 nnoremap <leader><leader>s <cmd>source %<cr>
 nnoremap <leader><leader>r <cmd>retab!<cr>
-nnoremap <leader><leader>R <cmd>set noexpandtab<cr><cmd>retab!<cr><cmd>set expandtab<cr>
+nnoremap <leader><leader>R <cmd>set noexpandtab<cr><cmd>retab!<cr>
+nnoremap <leader><leader>t <cmd>ToggleTerm<cr>
 " Configuration plugin dependant
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-colorscheme solarized
+colorscheme everforest
+" only needed in everforest
+set termguicolors
 noremap <leader>t <cmd>NvimTreeToggle<cr>
 " material config
 " nnoremap <leader>mm <cmd>lua require('material.functions').toggle_style()<cr>

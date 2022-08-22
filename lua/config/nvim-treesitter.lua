@@ -5,6 +5,9 @@ if not ok then
 end
 
 configs.setup {
+  autotag = {
+    enable = true
+  },
   highlight = {
     enable = true,
   },
