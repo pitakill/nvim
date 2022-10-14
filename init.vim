@@ -34,11 +34,13 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'RRethy/vim-illuminate'
 " Color schemes
-Plug 'marko-cerovac/material.nvim'
+" Plug 'marko-cerovac/material.nvim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'jonathanfilip/lucius'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sainnhe/everforest'
+" Plug 'kartikp10/noctis.nvim'
+" Plug 'rktjmp/lush.nvim'
 " Telescope configuration
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
