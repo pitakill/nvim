@@ -39,8 +39,8 @@ local function keymaps(bufnr)
   set(mode, 'gr', vim.lsp.buf.references, opts_with_buffer)
   set(mode, '<leader>f', vim.lsp.buf.format, opts_with_buffer)
   -- gitsign
-  vim.api.nvim_buf_set_keymap(bufnr, mode, '<leader>tgb', '<cmd>Gitsign toggle_current_line_blame<cr>',
-    opts)
+  vim.api.nvim_buf_set_keymap(bufnr, mode, '<leader>tgb', '<cmd>Gitsign toggle_current_line_blame<cr>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, mode, '<leader>tcd', '<cmd>Gitsign diffthis<cr>', opts)
 end
 
 M.setup = function()
@@ -59,7 +59,7 @@ end
 
 M.on_attach = function(client, bufnr)
   if client.name == 'tsserver' then
-    client.server_capabilities.documentFormattingProvider = false
+    -- client.server_capabilities.documentFormattingProvider = false
   end
 
   highlight(client)
@@ -75,7 +75,7 @@ if not ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 -- M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 return M

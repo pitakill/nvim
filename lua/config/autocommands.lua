@@ -15,7 +15,7 @@ local group = vim.api.nvim_create_augroup('pitakill', { clear = true })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
-    vim.lsp.buf.formatting()
+    vim.lsp.buf.format()
   end,
   group = group,
 })

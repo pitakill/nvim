@@ -1,11 +1,12 @@
 local lspconfig = require 'lspconfig'
 
 local servers = {
+  'bufls',
   'gopls',
   'tsserver',
   'svelte',
   'html',
-  'sumneko_lua',
+  -- 'sumneko_lua',
   'golangci_lint_ls',
 }
 

@@ -65,7 +65,8 @@ Plug 'rmagatti/goto-preview'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'samodostal/image.nvim'
 Plug 'kwkarlwang/bufjump.nvim'
-Plug 'folke/lua-dev.nvim'
+Plug 'folke/neodev.nvim'
+Plug 'xiyaowong/nvim-transparent'
 call plug#end()
 
 " Quick change background light/dark
